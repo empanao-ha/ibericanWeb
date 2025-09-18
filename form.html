@@ -6,16 +6,17 @@
 
         <meta name="description" content="">
         <meta name="author" content="Tooplate">
-        <link rel="icon" type="image/png" href="images/pato.png"/>
+        <link rel="icon" type="image/png" href="images/pato.png'"/>
         <title>Iberican Airlines</title>
 
-<!-- CSS FILES -->
+        <!-- CSS FILES -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-icons.css" rel="stylesheet">
         <link href="css/tooplate-moso-interior.css" rel="stylesheet"> 
+
 
         <style>
         * {
@@ -71,33 +72,9 @@
                 overflow: hidden;
             }
 
+
         </style>
-        <script>
-            
-            async function webhook(){
-            
-                const url ='http://api.weatherapi.com/v1/current.json?key=af44c51235be499f9d3181731251109&q=London&aqi=no';
-                const result = await fetch(url);
-                console.log(result);
 
-                const formEl = document.querySelector('.form');
-                formEl.addEventListener('submit', event =>{
-                    event.preventDefault();
-
-                    const formData = new FormData(formEl);
-                    const data = new URLSearchParams(formData);
-                    formData.get('username');
-
-                    fetch('reqres.in/api/users', { 
-                        method:'POST',
-                        body: data                      
-                    }).then(res => res.json()
-                        .then(data => console.log(data)))
-                        .catch(error => console.log(error));
-                });
-            
-            }
-        </script>
     </head>
 
     <body>
@@ -113,12 +90,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a href="javascript:webhook()">Webhook</a>
+                        <li class="nav-item">
                             <a class="nav-link click-scroll" href="#capaPanoramica">Home</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link " href="#sectionFounded">History</a>
+                            <a class="nav-link " href="/#sectionFounded">History</a>
                         </li>
 
                         <li class="nav-item dropdown">
@@ -132,7 +109,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" style="color:darkblue;" href="/careers">Careers</a>
+                            <a class="nav-link" style="color:darkblue;" href="careers.html">Careers</a>
                         </li>
                     </ul>
                 </div>
@@ -143,51 +120,18 @@
         <div class="capaPanoramica" id="capaPanoramica">
             <br>
             <!--<form class="custom-form hero-form" action="#" method="get" role="form" style="height:100px;">-->
-                <div class="row custom-form hero-form" style="margin: 0 auto;margin-top:300px;width:60%;">
-                    <div class="col-lg-5 col-md-6 col-12" >
-                        <div class="input-group align-items-center" >
-                            <label for="last-name">Class</label>
 
-                            <select name="price-range" class="form-select form-control" id="price-range" aria-label="Default select example">
-                                <option value="500" selected>Turista/Economy</option>
-                                <option value="1000">Premium Economy</option>
-                                <option value="3000">Bussines Class</option>
-                                <option value="5000">First Class</option>
-
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4" >
-                        <div class="input-group align-items-center" >
-                            <label for="last-name">Time</label>
-
-                            <select name="price-range" class="form-select form-control" id="time-range" aria-label="Default select example">
-                                <option value="European" selected>European</option>
-                                <option value="Asian">Asian</option>
-                                <option value="American">American</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2" style="margin-left: auto; margin-right: 0; width:15%;">
-                        <button type="submit" class="form-control">Search</button>
-                    </div>
-                </div>
             <!--</form> -->
         </div>
 
-
+       
         <section class="section-padding align-items-center" id="sectionFounded">
             <div class="container" >
                 <div class="row" >
                     <div class="col-lg-8 col-12 text-center mx-auto" >
                         <div class="hero-section-text">
                             <div class="relative z-10 text-center text-white">
-                                <p class="text-xl md:text-2xl mb-8">Founded December 29th, 2024. Led by an experienced global team of directors, Iberican Airlines is one of the biggest spanish airlines.
-                                The objective of this innovator operator bases on giving the best choice for the best price to the customers, the idea has brought success to the airline making it
-                                one of the powerfuliest operators on the industry, our main base of operations is Barcelona International Airport, Josep Tarradellas, Iberican Airlines™ owns today: Iberican Airlines, Iberican Express & Iberican Asia.</p>
-
+                                <iframe class="airtable-embed" src="https://airtable.com/embed/appHmcWNsxWugTjMp/pagUoOCii6OPMWPZd/form" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
                             </div>
                         </div>
                     </div>
@@ -195,32 +139,24 @@
             </div>
         </section>
 
+              <br><br><br>
         <section class="shop-section" id="section_3" style="display: block;">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 col-12">
-                        <!--<h2 class="mt-2 mb-4"><span class="tooplate-red">Interior</span> Products</h2>-->
-                    </div>
-                    <div class="col-lg-6 col-12" >
-                        <h3 style="color:#faba09">Discover further topics</h3>
+                    <div class="col-lg-5 col-12" style="text-align: center">
+                        <h3 style="color:#faba09">The Best Opportunities</h3>
                         <div >
                             <div class="shop-image-wrap">
 
                                 <div style="background-color:#ffffff">
                                     <a href="shop-detail.html" target="_blank" >
-                                    <img src="images/1left.png" class="img-fluid" style=" border-top-left-radius:50px;border-top-right-radius: 50px" alt="">
+                                    <img src="images/mobile.png" width="400" class="img-fluid" style=" border-top-left-radius:50px;border-top-right-radius: 50px" alt="">
                                     </a>
                                 </div>
-                                <div class="shop-btn-wrap">
-                                    <a href="executiveclub.html" class="shop-btn custom-btn   " style="font-size:smaller; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Discover</a>
-                                </div>
+
                             </div>
 
-                            <div class="shop-thumb card"  style="padding-left:10px;background-color:rgb(236, 245, 245);">
-                                <br>
-                                <h5 style="color:#faba09;font-size:30px">Enjoy a private boarding</h5><br>
-                                <p style="color:#e1bc55;font-size:larger; font-weight: 400; font-family: Verdana, Geneva, Tahoma, sans-serif;">Order your Executive Club membership and start enjoying the  best high quality experience.</p>
-                            </div>
+
                         </div>
                     </div>
 
@@ -255,20 +191,20 @@
                 <div class="row align-items-center">
 
                     <div >
+                        <small class="section-small-title" style="color:#0a4676;">Iberican Airlines, our objectives</small>
 
-
-                        <h5 style="color:#faba09;font-size:30px"><a href="transport.html"><img src="images/caricon.png" width="40" alt="" ></a>&nbsp;Your transport</h5><br>
-                        <p style="color:#e1bc55;font-size:larger; font-weight: 400; font-family: Verdana, Geneva, Tahoma, sans-serif;">As a client of the Iberican Club, enjoy exclusive perks with our partners.</p>
+                        <center><h4 class="text-muted mt-2 mb-3">Iberican Airlines has been the most successful airline with it's objective, flying passengers for the lowest cost with the best quality. Our objectives maintain the first proposal making flying easier than ever.</h4></center>
+                        <center><h4 class="text-muted mb-3">A member of the VAL Group</h4></center>
+                        <center><h5 class="text-muted mb-3">Your Passage to the World</h5></center>
                     </div>
 
                     <div class="col-lg-3 col-md-5 col-5 mx-lg-auto" style="display: none;">
-                        <img src="images/sharing-design-ideas-with-family.jpg" class="about-image about-image-small img-fluid" alt="">
+                        <img src="images/sharing-design-ideas-with-family.jpg'" class="about-image about-image-small img-fluid" alt="">
                     </div>
 
                     <div class="col-lg-4 col-md-7 col-7" style="display: none;">
                         <img src="images/living-room-interior-wall-mockup-warm-tones-with-leather-sofa-which-is-kitchen-3d-rendering.jpg" class="about-image img-fluid" alt="">
                     </div>
-                    <img src="images/Regional1.png" style="width: 700px;">
 
                 </div>
             </div>
@@ -292,7 +228,7 @@
                                     </div>
 
                                     <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
-                                        <img src="images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg' " class="avatar-image img-fluid" alt="">
+                                        <img src="images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg" class="avatar-image img-fluid" alt="">
 
                                         <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                             <p class="text-white mb-0">
@@ -360,7 +296,7 @@
 
                                 <div class="reviews-thumb">
                                     <div class="reviews-body">
-                                        <h4>Iberican Airlines 2025</h4>
+                                        <h4>This Bootstrap 5 layout is free to use for your website.</h4>
                                     </div>
 
                                     <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
@@ -368,7 +304,7 @@
 
                                         <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                             <p class="text-white mb-0">
-                                                <strong>Iberican Development Team</strong>, <small>Designers</small>
+                                                <strong>Bill</strong>, <small>Designer</small>
                                             </p>
 
                                             <div class="reviews-icons">
@@ -384,15 +320,15 @@
 
                                 <div class="reviews-thumb">
                                     <div class="reviews-body">
-                                        <h4>VAL Group</h4>
+                                        <h4>Thank you for visiting Tooplate to download free templates.</h4>
                                     </div>
 
                                     <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
-                                        <img src="images/avatar/portrait-young-beautiful-woman-gesticulating.jpg' " class="avatar-image img-fluid" alt="">
+                                        <img src="images/avatar/portrait-young-beautiful-woman-gesticulating.jpg" class="avatar-image img-fluid" alt="">
 
                                         <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                             <p class="text-white mb-0">
-                                                <strong>Benzz</strong>, <small>CEO</small>
+                                                <strong>Susan</strong>, <small>Boss</small>
                                             </p>
 
                                             <div class="reviews-icons">
@@ -469,15 +405,15 @@
                         <div class="col-lg-6 col-12 mt-5 mt-lg-0">
                             <div class="custom-block">
 
-                                <h3 class="text-white mb-2">Headquarters</h3>
+                                <h3 class="text-white mb-2">Store</h3>
 
                                 <p class="text-white mb-2">
                                     <i class="contact-icon bi-geo-alt me-1"></i>
 
-                                    Robloxia, 117 Av. of Eduard Maristany, Badalona, Spain.
+                                    117 Av. of Eduard Maristany, Badalona, Spain.
                                 </p>
 
-                                <h3 class="text-white mt-3 mb-2">Contact Us</h3>
+                                <h3 class="text-white mt-3 mb-2">Contact Info</h3>
 
                                 <div class="d-flex flex-wrap">
                                     <p class="text-white mb-2 me-4">
@@ -493,10 +429,11 @@
 
                                         <a href="mailto:ibericanairlines@iberican.info" class="text-white">
                                             ibericanairlines@iberican.info
-
+                                        </a>
+                                    </p>
                                 </div>
 
-                                <iframe class="google-map mt-2" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1495.836179745665!2d2.2336289374099363!3d41.42463047105652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1756377783898!5m2!1ses!2ses" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                <iframe class="google-map mt-2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4800.184803804974!2d-0.10174304922518053!3d51.5087879746898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487605f6fc62fa3d%3A0xc5a39e7cf4e3a9a4!2sTate%20Modern%20Garden!5e1!3m2!1sen!2smm!4v1679331839559!5m2!1sen!2smm" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                         </div>
 
@@ -514,7 +451,7 @@
                     <div class="col-lg-3 col-md-5 col-12 mb-3">
                         <h3><a href="https://www.roblox.com/es/communities/35511445/Iberican-Airlines#!/about" class="custom-link mb-1">Iberican Airlines</a></h3>
 
-                        <p class="text-white">Since 2024, Your Passage to the World</p>
+                        <p class="text-white">Since 1986, We crafted interior products for better spaces</p>
 
                         <p class="text-white"><a href="https://www.iberican.info/" target="_parent">© IBERICAN Airlines - All rights reserved.</a></p>
                     </div>
@@ -580,16 +517,30 @@
         </footer>
 
         <!-- JAVASCRIPT FILES -->
-        <script src="./js/jquery.min.js"></script>
-        <script src="./js/bootstrap.min.js"></script>
-        <script src="./js/click-scroll.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/click-scroll.js"></script>
 
         <!--<script src="js/owl.carousel.min.js"></script>-->
-        <script src="./js/custom.js"></script>
+        <script src="js/custom.js"></script>
 
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

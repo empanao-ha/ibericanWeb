@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pure CSS Image Carousel</title>
+    <link rel="stylesheet" href="carousel.css">
+  </head>
+  <body>
+    <div class="demo-container">
+      <h1>Pure CSS Image Carousel</h1>
+      <p>A customizable, responsive image carousel using only HTML and CSS</p>
+      
+      <!-- Carousel Component -->
+      <div class="carousel-container">
+        <div class="carousel">
+          <!-- Navigation inputs (hidden) -->
+          <input type="radio" name="carousel" id="slide1" class="carousel-input" checked>
+          <input type="radio" name="carousel" id="slide2" class="carousel-input">
+          <input type="radio" name="carousel" id="slide3" class="carousel-input">
+          <input type="radio" name="carousel" id="slide4" class="carousel-input">
+          <input type="radio" name="carousel" id="slide5" class="carousel-input">
+          
+          <!-- Slides -->
+          <div class="carousel-slides">
+            <div class="carousel-slide">
+              <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mountain landscape" />
+              <div class="carousel-caption">
+                <h3>Mountain Vista</h3>
+                <p>Breathtaking mountain landscapes</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ocean waves" />
+              <div class="carousel-caption">
+                <h3>Ocean Waves</h3>
+                <p>Serene coastal beauty</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Forest path" />
+              <div class="carousel-caption">
+                <h3>Alpine Dawn</h3>
+                <p>Peaceful morning in the mountains</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Desert sunset" />
+              <div class="carousel-caption">
+                <h3>Desert Sunset</h3>
+                <p>Golden hour in the wilderness</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <img src="https://images.pexels.com/photos/355508/pexels-photo-355508.jpeg?auto=compress&cs=tinysrgb&w=800" alt="City skyline" />
+              <div class="carousel-caption">
+                <h3>City Lights</h3>
+                <p>Urban nighttime panorama</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Navigation dots -->
+          <div class="carousel-navigation">
+            <label for="slide1" class="carousel-dot" aria-label="Go to slide 1"></label>
+            <label for="slide2" class="carousel-dot" aria-label="Go to slide 2"></label>
+            <label for="slide3" class="carousel-dot" aria-label="Go to slide 3"></label>
+            <label for="slide4" class="carousel-dot" aria-label="Go to slide 4"></label>
+            <label for="slide5" class="carousel-dot" aria-label="Go to slide 5"></label>
+          </div>
+          
+          <!-- Arrow navigation -->
+          <div class="carousel-arrows">
+            <!-- Left arrows - each points to the previous slide -->
+            <label for="slide5" class="carousel-arrow carousel-arrow-left slide1-prev" aria-label="Previous slide">‹</label>
+            <label for="slide1" class="carousel-arrow carousel-arrow-left slide2-prev" aria-label="Previous slide">‹</label>
+            <label for="slide2" class="carousel-arrow carousel-arrow-left slide3-prev" aria-label="Previous slide">‹</label>
+            <label for="slide3" class="carousel-arrow carousel-arrow-left slide4-prev" aria-label="Previous slide">‹</label>
+            <label for="slide4" class="carousel-arrow carousel-arrow-left slide5-prev" aria-label="Previous slide">‹</label>
+            
+            <!-- Right arrows - each points to the next slide -->
+            <label for="slide2" class="carousel-arrow carousel-arrow-right slide1-next" aria-label="Next slide">›</label>
+            <label for="slide3" class="carousel-arrow carousel-arrow-right slide2-next" aria-label="Next slide">›</label>
+            <label for="slide4" class="carousel-arrow carousel-arrow-right slide3-next" aria-label="Next slide">›</label>
+            <label for="slide5" class="carousel-arrow carousel-arrow-right slide4-next" aria-label="Next slide">›</label>
+            <label for="slide1" class="carousel-arrow carousel-arrow-right slide5-next" aria-label="Next slide">›</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
