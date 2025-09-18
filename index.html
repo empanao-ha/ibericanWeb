@@ -7,6 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="Tooplate">
         <link rel="icon" type="image/png" href="images/pato.png"/>
+        <link rel="stylesheet" href="carousel/carousel.css">
         <title>Iberican Airlines</title>
 
 <!-- CSS FILES -->
@@ -113,10 +114,10 @@
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a href="javascript:webhook()">Webhook</a>
+                        <!--<li class="nav-item"><a href="javascript:webhook()">Webhook</a>
                             <a class="nav-link click-scroll" href="#capaPanoramica">Home</a>
                         </li>
-
+                    -->
                         <li class="nav-item">
                             <a class="nav-link " href="#sectionFounded">History</a>
                         </li>
@@ -269,6 +270,83 @@
                         <img src="images/living-room-interior-wall-mockup-warm-tones-with-leather-sofa-which-is-kitchen-3d-rendering.jpg" class="about-image img-fluid" alt="">
                     </div>
                     <img src="images/Regional1.png" style="width: 700px;">
+                    <!-- Carousel Component -->
+                <div class="demo-container">
+                    <div class="carousel-container">
+                        <div class="carousel">
+                        <!-- Navigation inputs (hidden) -->
+                        <input type="radio" name="carousel" id="slide1" class="carousel-input" checked>
+                        <input type="radio" name="carousel" id="slide2" class="carousel-input">
+                        <input type="radio" name="carousel" id="slide3" class="carousel-input">
+                        <input type="radio" name="carousel" id="slide4" class="carousel-input">
+                        <input type="radio" name="carousel" id="slide5" class="carousel-input">
+                        
+                        <!-- Slides -->
+                        <div class="carousel-slides" style="text-align: left;">
+                            <div class="carousel-slide">
+                            <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mountain landscape" />
+                            <div class="carousel-captionnew">
+                                <h3>Mountain Vista</h3>
+                                <p>Breathtaking mountain landscapes</p>
+                            </div>
+                            </div>
+                            <div class="carousel-slide">
+                            <img src="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ocean waves" />
+                            <div class="carousel-captionnew">
+                                <h3>Ocean Waves</h3>
+                                <p>Serene coastal beauty</p>
+                            </div>
+                            </div>
+                            <div class="carousel-slide">
+                            <img src="https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Forest path" />
+                            <div class="carousel-captionnew">
+                                <h3>Alpine Dawn</h3>
+                                <p>Peaceful morning in the mountains</p>
+                            </div>
+                            </div>
+                            <div class="carousel-slide">
+                            <img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Desert sunset" />
+                            <div class="carousel-captionnew">
+                                <h3>Desert Sunset</h3>
+                                <p>Golden hour in the wilderness</p>
+                            </div>
+                            </div>
+                            <div class="carousel-slide">
+                            <img src="https://images.pexels.com/photos/355508/pexels-photo-355508.jpeg?auto=compress&cs=tinysrgb&w=800" alt="City skyline" />
+                            <div class="carousel-captionnew">
+                                <h3>City Lights</h3>
+                                <p>Urban nighttime panorama</p>
+                            </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation dots -->
+                        <div class="carousel-navigation">
+                            <label for="slide1" class="carousel-dot" aria-label="Go to slide 1"></label>
+                            <label for="slide2" class="carousel-dot" aria-label="Go to slide 2"></label>
+                            <label for="slide3" class="carousel-dot" aria-label="Go to slide 3"></label>
+                            <label for="slide4" class="carousel-dot" aria-label="Go to slide 4"></label>
+                            <label for="slide5" class="carousel-dot" aria-label="Go to slide 5"></label>
+                        </div>
+                        
+                        <!-- Arrow navigation -->
+                        <div class="carousel-arrows">
+                            <!-- Left arrows - each points to the previous slide -->
+                            <label for="slide5" class="carousel-arrow carousel-arrow-left slide1-prev" aria-label="Previous slide">‹</label>
+                            <label for="slide1" class="carousel-arrow carousel-arrow-left slide2-prev" aria-label="Previous slide">‹</label>
+                            <label for="slide2" class="carousel-arrow carousel-arrow-left slide3-prev" aria-label="Previous slide">‹</label>
+                            <label for="slide3" class="carousel-arrow carousel-arrow-left slide4-prev" aria-label="Previous slide">‹</label>
+                            <label for="slide4" class="carousel-arrow carousel-arrow-left slide5-prev" aria-label="Previous slide">‹</label>
+                            
+                            <!-- Right arrows - each points to the next slide -->
+                            <label for="slide2" class="carousel-arrow carousel-arrow-right slide1-next" aria-label="Next slide">›</label>
+                            <label for="slide3" class="carousel-arrow carousel-arrow-right slide2-next" aria-label="Next slide">›</label>
+                            <label for="slide4" class="carousel-arrow carousel-arrow-right slide3-next" aria-label="Next slide">›</label>
+                            <label for="slide5" class="carousel-arrow carousel-arrow-right slide4-next" aria-label="Next slide">›</label>
+                            <label for="slide1" class="carousel-arrow carousel-arrow-right slide5-next" aria-label="Next slide">›</label>
+                        </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -423,47 +501,45 @@
                     <div class="row">
 
                         <div class="col-lg-12 col-12">
-                            <small class="section-small-title">Ask anything.</small>
+                            <small class="section-small-title"></small>
 
-                            <h2 class="mb-4">Say Hello</h2>
+                            <h2 class="mb-4"></h2>
                         </div>
 
                         <div class="col-lg-6 col-12">
-                            <form class="custom-form contact-form" action="#" method="post" role="form">
+                            
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="input-group align-items-center">
-                                            <label for="first-name">First Name</label>
+                                            
 
-                                            <input type="text" name="first-name" id="first-name" class="form-control" placeholder="Jack" required>
+                                            
                                         </div>
                                     </div>
 
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="input-group align-items-center">
-                                            <label for="last-name">Last Name</label>
+                                            
 
-                                            <input type="text" name="last-name" id="last-name" class="form-control" placeholder="Doe" required>
+                                            
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="input-group align-items-center">
-                                    <label for="email">Email Address</label>
+                                    
 
-                                     <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Jackdoe@gmail.com" required>
+                                    
                                 </div>
 
                                 <div class="input-group textarea-group">
-                                    <label for="message">Message</label>
+                                    
 
-                                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="What can we help you?"></textarea>
+                                    
                                 </div>
 
-                                <div class="col-lg-3 col-md-4 col-6">
-                                    <button type="submit" class="form-control">Send</button>
-                                </div>
-                            </form>
+                                
+                            
                         </div>
 
                         <div class="col-lg-6 col-12 mt-5 mt-lg-0">
