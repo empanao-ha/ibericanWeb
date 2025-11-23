@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="Tooplate">
+        <link rel="icon" type="image/png" href="images/pato.png'"/>
+        <title>Iberican Airlines</title>
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+        <link href="css/tooplate-moso-interior.css" rel="stylesheet"> 
+
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/ssr@2"></script>
+
+        <script>
+            function buildNewList(data) {
+                // Selecciona el elemento <ul>
+                const cuerpoTabla = document.getElementById("miListaTable");
+
+                // Recorre el JSON y crea elementos <li>
+                data.forEach(item => {
+                    const rowTitulo = document.createElement("tr");
+                    const celdaTitulo = document.createElement("td");
+                    celdaTitulo.textContent = item.title;
+                    rowTitulo.appendChild(celdaTitulo);
+
+                    const rowDesc = document.createElement("tr");
+                    const celdaDesc = document.createElement("td");
+                    celdaDesc.textContent = item.description;
+                    rowDesc.appendChild(celdaDesc);
+
+                    const rowVacia = document.createElement("tr");
+                    const celdaVacia = document.createElement("td");
+                    celdaVacia.textContent = "";
+                    rowVacia.appendChild(celdaVacia);
+                    
+                    cuerpoTabla.appendChild(rowTitulo);
+                    cuerpoTabla.appendChild(rowDesc);
+                    cuerpoTabla.appendChild(rowVacia);
+
+                });
+            }
+
+            async function conecta(){
+                const { createClient } = supabase
+
+                // Create a single supabase client for interacting with your database
+                const _supabase = createClient('https://sojbyjncrxgivekanscd.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNvamJ5am5jcnhnaXZla2Fuc2NkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc2OTQxOTgsImV4cCI6MjA3MzI3MDE5OH0.0CZDSwV8BSeFZxGQFYw-mfjrVZVa54hDIbVNeP_0Ftc');
+                
+                const { data, error } = await _supabase
+                    .from('Positions')
+                    .select()
+
+                    buildNewList(data);
+            }
+
+            conecta();
+        </script>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+         /* Primera capa */
+         .core-header-wrap {
+
+            background-color: #faba01;
+            color: white;
+            text-align: center;
+            padding: 0px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            transition: opacity 0.3s ease;
+        }
+
+        /* .capaCarousel {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            animation: cambiarFondo 10s infinite;
+        }*/
+
+        .capaPanoramica {
+            position: relative;
+            height: 500px;
+            background-image: url("images/panoramica.png");
+        }
+
+        /* Clase que oculta la primera capa */
+        .hide-header {
+            opacity: 0;
+            pointer-events: none;  /*Desactiva cualquier interacción con la capa */
+        }
+/*
+        @keyframes cambiarFondo {
+            0%, 45% { background-image: url('images/slideshow/interior-wall-mockup-with-sofa-cabinet-living-room-with-empty-white-wall-background-3d-rendering.jpg'); }
+            50%, 100% { background-image: url('images/slideshow/white-wall-living-room-have-sofa-decoration-3d-rendering.jpg'); }
+        }*/
+
+            .card {
+                background: #fff;
+                border-radius: 4px;
+                text-decoration: unset;
+                box-shadow: 0 .1rem .4rem #0003;
+                overflow: hidden;
+            }
+
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-lg shadow-lg core-header-wrap" style="position: fixed; top: 0;" id="header">
+            <div class="container">
+                <!--<h4><a class="navbar-brand-sans" style="color:#ffffff;" href="#header"><img src="images/logo.png" height="60px;">&nbsp;IBERICAN Airlines</a></h4>-->
+                <h4><a class="navbar-brand-sans" style="color:#ffffff;" href="https://iberican.info"><img src="images/logoPortada.png" height="100px;"></a></h4>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#capaPanoramica">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/#sectionFounded">History</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle click-scroll" href="#section_3" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Booking</a>
+
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li><a class="dropdown-item" href="information.html">Information</a></li>
+
+                                <!--<li><a class="dropdown-item" href="shop-detail.html">Shop Detail</a></li>-->
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" style="color:darkblue;" href="careers.html">Careers</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+        <div class="capaPanoramica" id="capaPanoramica">
+            <br>
+            <!--<form class="custom-form hero-form" action="#" method="get" role="form" style="height:100px;">-->
+
+            <!--</form> -->
+        </div>
+
+       
+        <section class="section-padding align-items-center" id="sectionFounded">
+            <div class="container" >
+                <div class="row" >
+                    <div class="col-lg-8 col-12 text-center mx-auto" >
+                        <div class="hero-section-text">
+                            <div class="relative z-10 text-center">
+                                <table id="miListaTable"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+            
+              <br><br><br>
+        <section class="shop-section" id="section_3" style="display: block;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-12" style="text-align: center">
+                        <h3 style="color:#faba09">The Best Opportunities</h3>
+                        <div >
+                            <div class="shop-image-wrap">
+
+                                <div style="background-color:#ffffff">
+                                    <form action="/datosform" method="POST">
+                                      <label>Nombre:</label><input type="text" name="name" required>
+                                      <label>Email:</label><input type="email" name="email" required>
+                                      <label>Texto:</label><textarea name="message" required></textarea>
+                                      <button type="submit">Submit</button>
+                                    </form>
+                                    
+                                    <a href="shop-detail.html" target="_blank" >
+                                    <img src="images/mobile.png" width="400" class="img-fluid" style=" border-top-left-radius:50px;border-top-right-radius: 50px" alt="">
+                                    </a>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-6 col-12">
+                        <div class="shop-thumb">
+                            <div class="shop-image-wrap">
+                                <a href="shop-detail.html">
+                                    <img src="images/shop/mock-up-poster-modern-dining-room-interior-design-with-white-empty-wall.jpg" class="shop-image img-fluid" alt="">
+                                </a>
+
+
+
+                                <div class="shop-btn-wrap">
+                                    <a href="shop-detail.html" class="shop-btn custom-btn btn d-flex align-items-center align-items-center">Learn more</a>
+                                </div>
+                            </div>
+
+                            <div class="shop-body">
+                                <h4></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="shop-section section-padding" id="section_2" style="display: block;">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <div >
+                        <small class="section-small-title" style="color:#0a4676;">Iberican Airlines, our objectives</small>
+
+                        <center><h4 class="text-muted mt-2 mb-3">Iberican Airlines has been the most successful airline with it's objective, flying passengers for the lowest cost with the best quality. Our objectives maintain the first proposal making flying easier than ever.</h4></center>
+                        <center><h4 class="text-muted mb-3">A member of the VAL Group</h4></center>
+                        <center><h5 class="text-muted mb-3">Your Passage to the World</h5></center>
+                    </div>
+
+                    <div class="col-lg-3 col-md-5 col-5 mx-lg-auto" style="display: none;">
+                        <img src="images/sharing-design-ideas-with-family.jpg'" class="about-image about-image-small img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-4 col-md-7 col-7" style="display: none;">
+                        <img src="images/living-room-interior-wall-mockup-warm-tones-with-leather-sofa-which-is-kitchen-3d-rendering.jpg" class="about-image img-fluid" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+            <section class="reviews-section section-padding pb-0" id="section_4" style="display: none;">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12">
+                            <small class="section-small-title">Happy customers.</small>
+
+                            <h2 class="mt-2 mb-4"><a href="careers.html">Careers</a></h2>
+
+                            <div class="owl-carousel reviews-carousel">
+                                <div class="reviews-thumb">
+                                    <div class="reviews-body">
+                                        <h4>Moso Interior is the most suitable website layout.</h4>
+                                    </div>
+
+                                    <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
+                                        <img src="images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg" class="avatar-image img-fluid" alt="">
+
+                                        <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                            <p class="text-white mb-0">
+                                                <strong>Sandy</strong>, <small>CEO</small>
+                                            </p>
+
+                                            <div class="reviews-icons">
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="reviews-thumb">
+                                    <div class="reviews-body">
+                                        <h4>Explore more HTML Templates to download for your website.</h4>
+                                    </div>
+
+                                    <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
+                                        <img src="images/avatar/studio-portrait-emotional-happy-funny-smiling-boyfriend-man-with-heavy-beard-stands-with-arms-crossed-dressed-red-t-shirt-isolated-blue.jpg" class="avatar-image img-fluid" alt="">
+
+                                        <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                            <p class="text-white mb-0">
+                                                <strong>Jack</strong>, <small>Partner</small>
+                                            </p>
+
+                                            <div class="reviews-icons">
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star"></i>
+                                                <i class="bi-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="reviews-thumb">
+                                    <div class="reviews-body">
+                                        <h4>Please recommend Tooplate website to your friends.</h4>
+                                    </div>
+
+                                    <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
+                                        <img src="images/avatar/portrait-beautiful-young-woman-standing-grey-wall.jpg" class="avatar-image img-fluid" alt="">
+
+                                        <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                            <p class="text-white mb-0">
+                                                <strong>Helen</strong>, <small>Client</small>
+                                            </p>
+
+                                            <div class="reviews-icons">
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="reviews-thumb">
+                                    <div class="reviews-body">
+                                        <h4>This Bootstrap 5 layout is free to use for your website.</h4>
+                                    </div>
+
+                                    <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
+                                        <img src="images/avatar/portrait-young-redhead-bearded-male-wears-white-t-shirt-keeps-his-eyes-closed-smiling-feels-happy-yellow.jpg" class="avatar-image img-fluid" alt="">
+
+                                        <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                            <p class="text-white mb-0">
+                                                <strong>Bill</strong>, <small>Designer</small>
+                                            </p>
+
+                                            <div class="reviews-icons">
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star"></i>
+                                                <i class="bi-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="reviews-thumb">
+                                    <div class="reviews-body">
+                                        <h4>Thank you for visiting Tooplate to download free templates.</h4>
+                                    </div>
+
+                                    <div class="reviews-bottom reviews-bottom-up d-flex align-items-center">
+                                        <img src="images/avatar/portrait-young-beautiful-woman-gesticulating.jpg" class="avatar-image img-fluid" alt="">
+
+                                        <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                            <p class="text-white mb-0">
+                                                <strong>Susan</strong>, <small>Boss</small>
+                                            </p>
+
+                                            <div class="reviews-icons">
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                                <i class="bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-12">
+                                <p class="d-flex justify-content-center align-items-center mt-lg-5">Write some reviews on <a href="#" class="custom-btn btn ms-3"><i class="bi-facebook me-2"></i>facebook</a></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="contact-section" id="section_5">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f9f9f9" fill-opacity="1" d="M0,96L40,117.3C80,139,160,181,240,186.7C320,192,400,160,480,149.3C560,139,640,149,720,176C800,203,880,245,960,250.7C1040,256,1120,224,1200,229.3C1280,235,1360,277,1400,298.7L1440,320L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12">
+                            <small class="section-small-title">Ask anything.</small>
+
+                            <h2 class="mb-4">Say Hello</h2>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <form class="custom-form contact-form" action="#" method="post" role="form">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="input-group align-items-center">
+                                            <label for="first-name">First Name</label>
+
+                                            <input type="text" name="first-name" id="first-name" class="form-control" placeholder="Jack" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="input-group align-items-center">
+                                            <label for="last-name">Last Name</label>
+
+                                            <input type="text" name="last-name" id="last-name" class="form-control" placeholder="Doe" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="input-group align-items-center">
+                                    <label for="email">Email Address</label>
+
+                                     <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Jackdoe@gmail.com" required>
+                                </div>
+
+                                <div class="input-group textarea-group">
+                                    <label for="message">Message</label>
+
+                                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="What can we help you?"></textarea>
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    <button type="submit" class="form-control">Send</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+                            <div class="custom-block">
+
+                                <h3 class="text-white mb-2">Store</h3>
+
+                                <p class="text-white mb-2">
+                                    <i class="contact-icon bi-geo-alt me-1"></i>
+
+                                    117 Av. of Eduard Maristany, Badalona, Spain.
+                                </p>
+
+                                <h3 class="text-white mt-3 mb-2">Contact Info</h3>
+
+                                <div class="d-flex flex-wrap">
+                                    <p class="text-white mb-2 me-4">
+                                        <i class="contact-icon bi-telephone me-1"></i>
+
+                                        <a href="https://discord.gg/TxPTUb5hKa" class="text-white">
+                                            Support avaiable
+                                        </a>
+                                    </p>
+
+                                    <p class="text-white">
+                                        <i class="contact-icon bi-envelope me-1"></i>
+
+                                        <a href="mailto:ibericanairlines@iberican.info" class="text-white">
+                                            ibericanairlines@iberican.info
+                                        </a>
+                                    </p>
+                                </div>
+
+                                <iframe class="google-map mt-2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4800.184803804974!2d-0.10174304922518053!3d51.5087879746898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487605f6fc62fa3d%3A0xc5a39e7cf4e3a9a4!2sTate%20Modern%20Garden!5e1!3m2!1sen!2smm!4v1679331839559!5m2!1sen!2smm" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#36363e" fill-opacity="1" d="M0,96L40,117.3C80,139,160,181,240,186.7C320,192,400,160,480,149.3C560,139,640,149,720,176C800,203,880,245,960,250.7C1040,256,1120,224,1200,229.3C1280,235,1360,277,1400,298.7L1440,320L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+        </main>
+
+        <footer class="site-footer section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-5 col-12 mb-3">
+                        <h3><a href="https://www.roblox.com/es/communities/35511445/Iberican-Airlines#!/about" class="custom-link mb-1">Iberican Airlines</a></h3>
+
+                        <p class="text-white">Since 1986, We crafted interior products for better spaces</p>
+
+                        <p class="text-white"><a href="https://www.iberican.info/" target="_parent">© IBERICAN Airlines - All rights reserved.</a></p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-12 ms-lg-auto mb-3">
+                        <h3 class="text-white mb-3">Offices</h3>
+
+                        <p class="text-white mt-2">
+                            <i class="bi-geo-alt"></i>
+                            Badalona, Spain
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-12 mb-3">
+                        <h3 class="text-white mb-3">Contact Info</h3>
+
+                            <p class="text-white mb-1">
+                                <i class="bi-telephone me-1"></i>
+
+                                <a href="https://discord.gg/TxPTUb5hKa" class="text-white">
+                                    Support avaiable
+                                </a>
+                            </p>
+
+                            <p class="text-white mb-0">
+                                <i class="bi-envelope me-1"></i>
+
+                                <a href="mailto:info@company.com" class="text-white">
+                                    info@company.com
+                                </a>
+                            </p>
+                    </div>
+
+                    <div class="col-lg-6 col-md-7 copyright-text-wrap col-12 d-flex flex-wrap align-items-center mt-4 ms-auto">
+                        <p class="copyright-text mb-0 me-4">Offices: Robloxia, Badalona, Av. Eduard Maristany. Iberican Airlines 2025 </p>
+
+                        <ul class="social-icon">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link social-icon-twitter bi-twitter"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link social-icon-facebook bi-facebook"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link social-icon-instagram bi-instagram"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link social-icon-pinterest bi-pinterest"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link social-icon-whatsapp bi-whatsapp"></a>
+                            </li>
+                            <ion-icon name="logo-youtube" size="small" class="social-icon-link" style="color:red"></ion-icon>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/click-scroll.js"></script>
+
+        <!--<script src="js/owl.carousel.min.js"></script>-->
+        <script src="js/custom.js"></script>
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
