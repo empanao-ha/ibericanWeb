@@ -6,7 +6,7 @@
     },
     {
       "source": "/positions",
-      "destination": "/Positions.html"
+      "destination": "/formularios/Positions.html"
     }
   ]
 }
