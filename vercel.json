@@ -3,6 +3,10 @@
     {
       "source": "/careers",
       "destination": "/careers.html"
+    },
+    {
+      "source": "/positions",
+      "destination": "/Positions.html"
     }
   ]
 }
