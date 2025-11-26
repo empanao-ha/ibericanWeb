@@ -1,15 +1,29 @@
 // Selección del formulario
 const form = document.querySelector('#formApplication');
-alert(form);
 if (form) {
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     
     // Captura del campo email
     const emailInput = form.querySelector('input[name="email"]');
-    const nameInput = form.querySelector('input[name="name"]');
+    const usernameInput = form.querySelector('input[name="username"]');
+    const timezoneInput = form.querySelector('input[name="timezone"]');
+    const experienceInput = form.querySelector('input[name="experience"]');
+    const interestInput = form.querySelector('input[name="interest"]');
+    const standoutInput = form.querySelector('input[name="standout"]');
+    const openmessageInput = form.querySelector('input[name="openmessage"]');
+    const applicationIdInput = form.querySelector('input[name="applicationId"]');
+
+
     const email = emailInput?.value.trim() || '';
-    const name = nameInput?.value.trim() || '';
+    const username = usernameInput?.value.trim() || '';
+    const timezone = timezoneInput?.value.trim() || '';
+    const experiece = experienceInput?.value.trim() || '';
+    const interest = interestInput?.value.trim() || '';
+    const standout = standoutInput?.value.trim() || '';
+    const openmessage = openmessageInput?.value.trim() || '';
+    const applicationId = applicationIdInput?.value.trim() || '';
+
 
     // Validación sencilla de email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -25,7 +39,13 @@ if (form) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
             email,
-            name
+            username,
+            timezone,
+            experiece,
+            interest,
+            standout,
+            openmessage,
+            applicationId
          }),
       });
 
