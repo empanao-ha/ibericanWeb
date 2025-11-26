@@ -8,11 +8,11 @@ if (form) {
     const emailInput = form.querySelector('input[name="email"]');
     const usernameInput = form.querySelector('input[name="username"]');
     const timezoneInput = form.querySelector('input[name="timezone"]');
-    const experienceInput = form.querySelector('input[textarea="experience"]');
-    const interestInput = form.querySelector('input[textarea="interest"]');
-    const standoutInput = form.querySelector('input[textarea="standout"]');
-    const openmessageInput = form.querySelector('input[textarea="openmessage"]');
-    const applicationIdInput = form.querySelector('input[name="applicationId"]');
+    const experienceInput = window.document.getElementById("experience");
+    const interestInput = window.document.getElementById("interest");
+    const standoutInput = window.document.getElementById("standout");
+    const openmessageInput = window.document.getElementById("openmessage");
+    const applicationIdInput = window.document.getElementById("applicationId");
 
 
     const email = emailInput?.value.trim() || '';
