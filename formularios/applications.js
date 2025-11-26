@@ -8,10 +8,10 @@ if (form) {
     const emailInput = form.querySelector('input[name="email"]');
     const usernameInput = form.querySelector('input[name="username"]');
     const timezoneInput = form.querySelector('input[name="timezone"]');
-    const experienceInput = form.querySelector('input[name="experience"]');
-    const interestInput = form.querySelector('input[name="interest"]');
-    const standoutInput = form.querySelector('input[name="standout"]');
-    const openmessageInput = form.querySelector('input[name="openmessage"]');
+    const experienceInput = form.querySelector('input[textarea="experience"]');
+    const interestInput = form.querySelector('input[textarea="interest"]');
+    const standoutInput = form.querySelector('input[textarea="standout"]');
+    const openmessageInput = form.querySelector('input[textarea="openmessage"]');
     const applicationIdInput = form.querySelector('input[name="applicationId"]');
 
 
