@@ -8,5 +8,11 @@
       "source": "/positions",
       "destination": "/formularios/Positions.html"
     }
+  ],
+  "redirects":[
+    {
+      "source": "/careers/board",
+      "destination": "/careersForm1.html"
+    }
   ]
 }
