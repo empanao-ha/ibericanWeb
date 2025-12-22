@@ -49,9 +49,14 @@
 
         .capaPanoramica {
             position: relative;
-            width: 1920px;
+            width: 100%;
+      
+            overflow: hidden;
             
             background-image: url("images/panoramica2.png");
+            background-size: cover;     /* ocupa todo sin deformar */
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         /* Clase que oculta la primera capa */
